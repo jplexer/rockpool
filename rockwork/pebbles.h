@@ -22,7 +22,8 @@ public:
         RoleAddress,
         RoleName,
         RoleSerialNumber,
-        RoleConnected
+        RoleConnected,
+        RoleConnectionState
     };
 
     Pebbles(QObject *parent = 0);

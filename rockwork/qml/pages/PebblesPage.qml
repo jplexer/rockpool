@@ -66,7 +66,16 @@ Page {
 
                 Label {
                     width: parent.width
-                    text: model.connected ? qsTr("Connected") : qsTr("Disconnected")
+                    // connectionState: 0=Disconnected 1=Connecting 2=Negotiating 3=Connected 4=Failed
+                    text: {
+                        switch (model.connectionState) {
+                        case 1: return qsTr("Connecting…")
+                        case 2: return qsTr("Negotiating…")
+                        case 3: return qsTr("Connected")
+                        case 4: return qsTr("Connection failed")
+                        default: return qsTr("Disconnected")
+                        }
+                    }
                     font.pixelSize: Theme.fontSizeSmall
                     truncationMode: TruncationMode.Fade
                     color: watchItem.highlighted ? Theme.secondaryHighlightColor

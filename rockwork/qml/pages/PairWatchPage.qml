@@ -6,6 +6,7 @@ import Sailfish.Silica 1.0
 Page {
     id: pairPage
     property string connectingTo: ""
+    property string failureMessage: ""
 
     Component.onCompleted: pebbles.startScan()
     Component.onDestruction: pebbles.stopScan()
@@ -16,6 +17,19 @@ Page {
         onCountChanged: pairPage.connectingTo = ""
     }
 
+    // Backstop: a pairing that fails before the watch ever becomes known (e.g. createBond fails)
+    // never changes the watch count, so without this the spinner runs forever. Resume scanning so
+    // the user can retry.
+    Timer {
+        interval: 60000
+        running: pairPage.connectingTo !== ""
+        onTriggered: {
+            pairPage.failureMessage = qsTr("Pairing timed out. Put the watch in pairing mode and try again.")
+            pairPage.connectingTo = ""
+            pebbles.startScan()
+        }
+    }
+
     SilicaListView {
         id: resultsView
         anchors.fill: parent
@@ -23,8 +37,9 @@ Page {
 
         header: PageHeader {
             title: qsTr("Pair a Pebble")
-            description: pebbles.scanning ? qsTr("Scanning for watches…")
-                                          : qsTr("Scan stopped")
+            description: pairPage.failureMessage !== "" ? pairPage.failureMessage
+                         : pebbles.scanning ? qsTr("Scanning for watches…")
+                                            : qsTr("Scan stopped")
         }
 
         PullDownMenu {
@@ -58,6 +73,7 @@ Page {
             }
 
             onClicked: {
+                pairPage.failureMessage = ""
                 pairPage.connectingTo = modelData.address
                 // Keep the radio free for the connection attempt.
                 pebbles.stopScan()

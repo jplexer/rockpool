@@ -22,6 +22,7 @@ Pebble::Pebble(const QDBusObjectPath &path, QObject *parent):
 
     QDBusConnection::sessionBus().connect("org.rockwork", path.path(), "org.rockwork.Pebble", "Connected", this, SLOT(pebbleConnected()));
     QDBusConnection::sessionBus().connect("org.rockwork", path.path(), "org.rockwork.Pebble", "Disconnected", this, SLOT(pebbleDisconnected()));
+    QDBusConnection::sessionBus().connect("org.rockwork", path.path(), "org.rockwork.Pebble", "ConnectionStateChanged", this, SLOT(pebbleConnectionStateChanged(int)));
     QDBusConnection::sessionBus().connect("org.rockwork", path.path(), "org.rockwork.Pebble", "InstalledAppsChanged", this, SLOT(refreshApps()));
     QDBusConnection::sessionBus().connect("org.rockwork", path.path(), "org.rockwork.Pebble", "OpenURL", this, SIGNAL(openURL(const QString&, const QString&)));
     QDBusConnection::sessionBus().connect("org.rockwork", path.path(), "org.rockwork.Pebble", "NotificationFilterChanged", this, SLOT(notificationFilterChanged(const QString &, const QString &, const QString &, const int )));
@@ -524,6 +525,13 @@ void Pebble::dataChanged()
         m_connected = connected;
         emit connectedChanged();
     }
+    int state = fetchProperty("ConnectionState").toInt();
+    QString error = fetchProperty("LastError").toString();
+    if (state != m_connectionState || error != m_lastError) {
+        m_connectionState = state;
+        m_lastError = error;
+        emit connectionStateChanged();
+    }
     m_timelienWindowStart = -fetchProperty("timelineWindowStart").toInt();
     m_timelienWindowFade = -fetchProperty("timelineWindowFade").toInt();
     m_timelienWindowEnd = fetchProperty("timelineWindowEnd").toInt();
@@ -545,6 +553,26 @@ void Pebble::pebbleDisconnected()
 {
     m_connected = false;
     emit connectedChanged();
+}
+
+int Pebble::connectionState() const
+{
+    return m_connectionState;
+}
+
+QString Pebble::lastError() const
+{
+    return m_lastError;
+}
+
+void Pebble::pebbleConnectionStateChanged(int state)
+{
+    if (state == m_connectionState) {
+        return;
+    }
+    m_connectionState = state;
+    m_lastError = fetchProperty("LastError").toString();
+    emit connectionStateChanged();
 }
 
 void Pebble::notificationFilterChanged(const QString &sourceId, const QString &name, const QString &icon, const int enabled)

@@ -58,6 +58,8 @@ QVariant Pebbles::data(const QModelIndex &index, int role) const
         return m_pebbles.at(index.row())->serialNumber();
     case RoleConnected:
         return m_pebbles.at(index.row())->connected();
+    case RoleConnectionState:
+        return m_pebbles.at(index.row())->connectionState();
     }
 
     return QVariant();
@@ -70,6 +72,7 @@ QHash<int, QByteArray> Pebbles::roleNames() const
     roles.insert(RoleName, "name");
     roles.insert(RoleSerialNumber, "serialNumber");
     roles.insert(RoleConnected, "connected");
+    roles.insert(RoleConnectionState, "connectionState");
     return roles;
 }
 
@@ -141,6 +144,7 @@ void Pebbles::refresh()
         if (find(p) == -1) {
             Pebble *pebble = new Pebble(p, this);
             connect(pebble, &Pebble::connectedChanged, this, &Pebbles::pebbleConnectedChanged);
+            connect(pebble, &Pebble::connectionStateChanged, this, &Pebbles::pebbleConnectedChanged);
             beginInsertRows(QModelIndex(), m_pebbles.count(), m_pebbles.count());
             m_pebbles.append(pebble);
             endInsertRows();
@@ -196,7 +200,7 @@ bool Pebbles::sortPebbles(Pebble *a, Pebble *b)
 void Pebbles::pebbleConnectedChanged()
 {
     Pebble *pebble = static_cast<Pebble*>(sender());
-    emit dataChanged(index(find(pebble->address())), index(find(pebble->address())), {RoleConnected});
+    emit dataChanged(index(find(pebble->address())), index(find(pebble->address())), {RoleConnected, RoleConnectionState});
 }
 
 int Pebbles::find(const QDBusObjectPath &path) const

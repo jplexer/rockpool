@@ -761,42 +761,47 @@
 <context>
     <name>PairWatchPage</name>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="25"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="27"/>
+        <source>Pairing timed out. Put the watch in pairing mode and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="39"/>
         <source>Pair a Pebble</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="26"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="41"/>
         <source>Scanning for watches…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="27"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="42"/>
         <source>Scan stopped</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="33"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="48"/>
         <source>Stop scanning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="33"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="48"/>
         <source>Scan again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="53"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="68"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="70"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="86"/>
         <source>Searching for Pebble watches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PairWatchPage.qml" line="71"/>
+        <location filename="../qml/pages/PairWatchPage.qml" line="87"/>
         <source>Put the watch in pairing mode: Settings → Bluetooth on the watch.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -825,7 +830,7 @@
     </message>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="22"/>
-        <location filename="../qml/pages/PebblesPage.qml" line="100"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="109"/>
         <source>Pair new watch</source>
         <translation type="unfinished"></translation>
     </message>
@@ -845,17 +850,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="69"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="72"/>
+        <source>Connecting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="73"/>
+        <source>Negotiating…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="74"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="69"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="75"/>
+        <source>Connection failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="76"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="91"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="100"/>
         <source>No Pebble smartwatches configured yet. Put your watch in pairing mode and pair it from here.</source>
         <translation type="unfinished"></translation>
     </message>

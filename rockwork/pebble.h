@@ -14,6 +14,10 @@ class Pebble : public QObject
     // hardware details
     Q_PROPERTY(QString name READ name CONSTANT)
     Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
+    // Finer-grained than `connected`: 0=Disconnected 1=Connecting 2=Negotiating 3=Connected
+    // 4=Failed. Lets the UI distinguish a reconnecting/failed watch from an idle one.
+    Q_PROPERTY(int connectionState READ connectionState NOTIFY connectionStateChanged)
+    Q_PROPERTY(QString lastError READ lastError NOTIFY connectionStateChanged)
     Q_PROPERTY(QString platformString READ platformString CONSTANT)
     Q_PROPERTY(QString hardwarePlatform READ hardwarePlatform NOTIFY hardwarePlatformChanged)
     Q_PROPERTY(int model READ model NOTIFY modelChanged)
@@ -67,6 +71,8 @@ public:
     QDBusObjectPath path();
 
     bool connected() const;
+    int connectionState() const;
+    QString lastError() const;
     QString address() const;
     QString name() const;
     QString platformString() const;
@@ -162,6 +168,7 @@ public slots:
 
 signals:
     void connectedChanged();
+    void connectionStateChanged();
     void hardwarePlatformChanged();
     void modelChanged();
     void languageVersionChanged();
@@ -205,6 +212,7 @@ private slots:
     void dataChanged();
     void pebbleConnected();
     void pebbleDisconnected();
+    void pebbleConnectionStateChanged(int state);
     void notificationFilterChanged(const QString &sourceId, const QString &name, const QString &icon, const int enabled);
     void refreshNotifications();
     void refreshApps();
@@ -220,6 +228,8 @@ private:
     QDBusObjectPath m_path;
 
     bool m_connected = false;
+    int m_connectionState = 0;
+    QString m_lastError;
     QString m_address;
     QString m_name;
     QString m_hardwarePlatform;
