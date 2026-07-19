@@ -45,6 +45,11 @@ public:
     Q_INVOKABLE void startScan();
     Q_INVOKABLE void stopScan();
     Q_INVOKABLE void connectWatch(const QString &address);
+    // Stop reconnecting but stay paired. Only takes effect while the watch is connected or
+    // attempting to; an idle known watch has to be forgotten instead.
+    Q_INVOKABLE void disconnectWatch(const QString &address);
+    // Unpair: the daemon keeps retrying a watch forever until it is told to forget it.
+    Q_INVOKABLE void forgetWatch(const QString &address);
 
 signals:
     void connectedToServiceChanged();

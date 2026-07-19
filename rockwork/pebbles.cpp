@@ -237,6 +237,19 @@ void Pebbles::connectWatch(const QString &address)
     iface.call("ConnectWatch", address);
 }
 
+void Pebbles::disconnectWatch(const QString &address)
+{
+    QDBusInterface iface(ROCKWORK_SERVICE, ROCKWORK_MANAGER_PATH, ROCKWORK_MANAGER_INTERFACE);
+    iface.call("DisconnectWatch", address);
+}
+
+void Pebbles::forgetWatch(const QString &address)
+{
+    QDBusInterface iface(ROCKWORK_SERVICE, ROCKWORK_MANAGER_PATH, ROCKWORK_MANAGER_INTERFACE);
+    iface.call("ForgetWatch", address);
+    // The daemon emits PebblesChanged once the watch is gone; the model refreshes from that.
+}
+
 void Pebbles::onScanningChanged(bool scanning)
 {
     if (m_scanning != scanning) {

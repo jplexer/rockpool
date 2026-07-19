@@ -25,7 +25,26 @@ Page {
         }
 
         delegate: ListItem {
+            id: watchItem
             contentHeight: Theme.fontSizeMedium*2
+            ListView.onRemove: animateRemoval(watchItem)
+
+            menu: ContextMenu {
+                MenuItem {
+                    text: qsTr("Disconnect")
+                    // Only while connected: this clears the daemon's connect goal, and it can
+                    // only reach a watch that is connected or attempting to.
+                    visible: model.connected
+                    onClicked: pebbles.disconnectWatch(model.address)
+                }
+                MenuItem {
+                    text: qsTr("Forget watch")
+                    onClicked: watchItem.remorseAction(qsTr("Forgetting watch"), function() {
+                        pebbles.forgetWatch(model.address)
+                    })
+                }
+            }
+
             Row {
                 anchors.fill: parent
                 anchors.margins: Theme.horizontalPageMargins
