@@ -139,6 +139,14 @@ public slots:
     void removeScreenshot(const QString &filename);
     void setNotificationFilter(const QString &sourceId, int enabled);
     void forgetNotificationFilter(const QString &sourceId);
+    // Per-app appearance overrides; empty value clears. colorName is a TimelineColor.name,
+    // iconCode a TimelineIcon.code. The daemon applies these async and emits no signal, so the
+    // model is updated optimistically here.
+    void setNotificationAppColor(const QString &sourceId, const QString &colorName);
+    void setNotificationAppIcon(const QString &sourceId, const QString &iconCode);
+    // Constant palettes for the pickers, fetched from the daemon (org.rockwork.Pebble).
+    QVariantList timelineColors();
+    QVariantList timelineIcons();
 
     void dumpLogs(const QString &filename);
     void setDevConnEnabled(bool enabled);

@@ -726,34 +726,80 @@
     </message>
 </context>
 <context>
+    <name>NotificationColorPage</name>
+    <message>
+        <location filename="../qml/pages/NotificationColorPage.qml" line="32"/>
+        <source>Colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NotificationColorPage.qml" line="39"/>
+        <source>Use default colour</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NotificationIconPage</name>
+    <message>
+        <location filename="../qml/pages/NotificationIconPage.qml" line="56"/>
+        <source>Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NotificationIconPage.qml" line="61"/>
+        <source>Search icons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NotificationIconPage.qml" line="68"/>
+        <source>Use default icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NotificationIconPage.qml" line="105"/>
+        <source>No matching icons</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>NotificationsPage</name>
     <message>
-        <location filename="../qml/pages/NotificationsPage.qml" line="15"/>
+        <location filename="../qml/pages/NotificationsPage.qml" line="26"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationsPage.qml" line="18"/>
+        <location filename="../qml/pages/NotificationsPage.qml" line="29"/>
         <source>Entries here will be added as notifications appear on the phone. Selected notifications will be shown on your Pebble smartwatch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationsPage.qml" line="63"/>
+        <location filename="../qml/pages/NotificationsPage.qml" line="99"/>
         <source>Always Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationsPage.qml" line="69"/>
+        <location filename="../qml/pages/NotificationsPage.qml" line="105"/>
         <source>Disabled When Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationsPage.qml" line="75"/>
+        <location filename="../qml/pages/NotificationsPage.qml" line="111"/>
         <source>Always Disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationsPage.qml" line="81"/>
+        <location filename="../qml/pages/NotificationsPage.qml" line="117"/>
+        <source>Colour…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NotificationsPage.qml" line="126"/>
+        <source>Icon…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NotificationsPage.qml" line="135"/>
         <source>Forget</source>
         <translation type="unfinished"></translation>
     </message>
@@ -830,52 +876,57 @@
     </message>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="22"/>
-        <location filename="../qml/pages/PebblesPage.qml" line="109"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="116"/>
         <source>Pair new watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="37"/>
-        <source>Disconnect</source>
+        <source>Connect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="44"/>
+        <source>Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="51"/>
         <source>Forget watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="45"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="52"/>
         <source>Forgetting watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="72"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="79"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="73"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="80"/>
         <source>Negotiating…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="74"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="81"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="75"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="82"/>
         <source>Connection failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="76"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="83"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="100"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="107"/>
         <source>No Pebble smartwatches configured yet. Put your watch in pairing mode and pair it from here.</source>
         <translation type="unfinished"></translation>
     </message>

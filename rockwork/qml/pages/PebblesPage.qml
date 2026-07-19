@@ -34,10 +34,17 @@ Page {
 
             menu: ContextMenu {
                 MenuItem {
+                    text: qsTr("Connect")
+                    // A known watch that isn't connected or already trying: re-arm the daemon's
+                    // connect goal. (connectionState: 0=Disconnected, 4=Failed.)
+                    visible: model.connectionState === 0 || model.connectionState === 4
+                    onClicked: pebbles.connectWatch(model.address)
+                }
+                MenuItem {
                     text: qsTr("Disconnect")
-                    // Only while connected: this clears the daemon's connect goal, and it can
-                    // only reach a watch that is connected or attempting to.
-                    visible: model.connected
+                    // While connected or attempting: clears the daemon's connect goal, which also
+                    // lets the user cancel a watch stuck retrying. (states 1/2/3.)
+                    visible: model.connectionState === 1 || model.connectionState === 2 || model.connectionState === 3
                     onClicked: pebbles.disconnectWatch(model.address)
                 }
                 MenuItem {
