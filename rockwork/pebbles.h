@@ -15,6 +15,8 @@ class Pebbles : public QAbstractListModel
     Q_PROPERTY(bool connectedToService READ connectedToService NOTIFY connectedToServiceChanged)
     Q_PROPERTY(QString version READ version)
     Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
+    Q_PROPERTY(bool scanning READ scanning NOTIFY scanningChanged)
+    Q_PROPERTY(QVariantList scanResults READ scanResults NOTIFY scanResultsChanged)
 public:
     enum Roles {
         RoleAddress,
@@ -35,15 +37,27 @@ public:
     Q_INVOKABLE Pebble *get(int index) const;
     int find(const QString &address) const;
 
+    bool scanning() const;
+    QVariantList scanResults() const;
+
+    // BLE pairing goes through the daemon (org.rockwork.Manager scan API),
+    // not the system Bluetooth settings.
+    Q_INVOKABLE void startScan();
+    Q_INVOKABLE void stopScan();
+    Q_INVOKABLE void connectWatch(const QString &address);
 
 signals:
     void connectedToServiceChanged();
     void countChanged();
+    void scanningChanged();
+    void scanResultsChanged();
 
 private slots:
     void refresh();
 
     void pebbleConnectedChanged();
+    void onScanningChanged(bool scanning);
+    void refreshScanResults();
 
 private:
     int find(const QDBusObjectPath &path) const;
@@ -53,6 +67,8 @@ private:
     bool m_connectedToService = false;
     QList<Pebble*> m_pebbles;
     QDBusServiceWatcher *m_watcher;
+    bool m_scanning = false;
+    QVariantList m_scanResults;
 };
 
 #endif // PEBBLES_H

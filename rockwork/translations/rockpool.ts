@@ -16,6 +16,14 @@
     </message>
 </context>
 <context>
+    <name>AppSettingsPage</name>
+    <message>
+        <location filename="../qml/pages/AppSettingsPage.qml" line="24"/>
+        <source>App settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AppStoreDetailsPage</name>
     <message>
         <location filename="../qml/pages/AppStoreDetailsPage.qml" line="170"/>
@@ -746,6 +754,49 @@
     </message>
 </context>
 <context>
+    <name>PairWatchPage</name>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="25"/>
+        <source>Pair a Pebble</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="26"/>
+        <source>Scanning for watches…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="27"/>
+        <source>Scan stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="33"/>
+        <source>Stop scanning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="33"/>
+        <source>Scan again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="53"/>
+        <source>Connecting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="70"/>
+        <source>Searching for Pebble watches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PairWatchPage.qml" line="71"/>
+        <source>Put the watch in pairing mode: Settings → Bluetooth on the watch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PebblesPage</name>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="9"/>
@@ -768,23 +819,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="35"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="22"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="68"/>
+        <source>Pair new watch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="39"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="35"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="39"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="55"/>
-        <source>No Pebble smartwatches configured yet. Please connect your Pebble smartwatch using System Settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="64"/>
-        <source>Open Bluetooth Settings</source>
+        <location filename="../qml/pages/PebblesPage.qml" line="59"/>
+        <source>No Pebble smartwatches configured yet. Put your watch in pairing mode and pair it from here.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

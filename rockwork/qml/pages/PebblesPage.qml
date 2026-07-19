@@ -18,6 +18,10 @@ Page {
                 text: qsTr("Restart service")
                 onClicked: rockPool.restartService()
             }
+            MenuItem {
+                text: qsTr("Pair new watch")
+                onClicked: pageStack.push(Qt.resolvedUrl("PairWatchPage.qml"))
+            }
         }
 
         delegate: ListItem {
@@ -52,7 +56,7 @@ Page {
         enabled: pebbles.count === 0
 
         Label {
-            text: qsTr("No Pebble smartwatches configured yet. Please connect your Pebble smartwatch using System Settings.")
+            text: qsTr("No Pebble smartwatches configured yet. Put your watch in pairing mode and pair it from here.")
             font.pixelSize: Theme.fontSizeLarge
             width: parent.width-(Theme.paddingSmall*2)
             anchors.centerIn: parent
@@ -61,10 +65,10 @@ Page {
         }
 
         Button {
-            text: qsTr("Open Bluetooth Settings")
+            text: qsTr("Pair new watch")
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            onClicked: rockPool.startBT()
+            onClicked: pageStack.push(Qt.resolvedUrl("PairWatchPage.qml"))
         }
     }
 }

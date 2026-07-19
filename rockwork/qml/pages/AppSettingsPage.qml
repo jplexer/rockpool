@@ -11,31 +11,59 @@ Page {
     property string url;
     property var pebble;
     allowedOrientations: Orientation.All
-    Label {
-        id: header
-        width: parent.width
-        anchors.top: parent.top
-        // The generated data URL from pebble-clay does not help the user and make it seem like a bug.
-        text: url.substring(0, 5) == "data:" ? "" : url
-        height: Theme.itemSizeMedium
-        horizontalAlignment: Text.AlignHCenter
-        font.pixelSize: Theme.fontSizeTiny
-        wrapMode: Text.WordWrap
-    }
 
+    // Fill the whole page and let the flickable own the header, so its contentHeight spans
+    // header + full web page — otherwise a config form taller than the screen can't be
+    // scrolled all the way to its Save button.
     WebViewFlickable {
         id: webview
-        anchors { top: header.bottom; bottom:parent.bottom; left:parent.left; }
-        width: parent.width
+        anchors.fill: parent
+
+        header: PageHeader {
+            // The generated data: URL from pebble-clay isn't useful and looks like a bug.
+            title: url.substring(0, 5) === "data:" ? qsTr("App settings") : ""
+            description: url.substring(0, 5) === "data:" ? "" : url
+        }
+
+        // Clay closes the config page by navigating to pebblejs://close#<data>. Sailfish's
+        // gecko (91) doesn't support the legacy chrome.manifest protocol handler that would
+        // have intercepted it, so catch the navigation here instead: parse the action out of
+        // the pebble URL and hand the settings back to the watchapp.
+        function handlePebbleUrl(u) {
+            if (u.indexOf("pebblejs://") !== 0 && u.indexOf("pebble://") !== 0)
+                return false;
+            console.log("pebble config close url:", u);
+            var hIdx = u.indexOf("://") + 3;
+            var hashIdx = u.indexOf("#");
+            var action = hashIdx >= 0 ? u.substring(hIdx, hashIdx) : u.substring(hIdx);
+            if (action.indexOf("close") === 0) {
+                // The watchapp's webviewclosed handler (pebble-clay) wants only the fragment
+                // after '#' — the URL-encoded config JSON — not the whole pebblejs://close URL.
+                var response = hashIdx >= 0 ? u.substring(hashIdx + 1) : "";
+                pebble.configurationClosed(appSettings.uuid, response);
+                pageStack.pop();
+            } else if (action.indexOf("custom-boot-config-url") === 0) {
+                var params = unescape(u).split("?");
+                for (var i = 0; i < params.length; i++) {
+                    if (params[i].substr(0, 13) === "access_token=") {
+                        pebble.setOAuthToken(params[i].split("=")[1]);
+                        break;
+                    }
+                }
+                pageStack.pop();
+            }
+            return true;
+        }
+
         webView {
-            visible: true
-            clip: false
+            clip: true
             focus: true
             active: true
-    
+
             url: appSettings.url
+            onUrlChanged: handlePebbleUrl("" + webView.url)
             onViewInitialized: {
-                WebEngine.addComponentManifest("/usr/share/rockpool/jsm/RockpoolJSComponents.manifest");
+                // Belt-and-braces: also accept the handler's async message if it ever works.
                 webView.addMessageListener("embed:pebble");
             }
             onRecvAsyncMessage: {
