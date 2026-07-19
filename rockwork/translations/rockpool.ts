@@ -18,7 +18,7 @@
 <context>
     <name>AppSettingsPage</name>
     <message>
-        <location filename="../qml/pages/AppSettingsPage.qml" line="24"/>
+        <location filename="../qml/pages/AppSettingsPage.qml" line="78"/>
         <source>App settings</source>
         <translation type="unfinished"></translation>
     </message>
