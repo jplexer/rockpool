@@ -26,7 +26,10 @@ Page {
 
         delegate: ListItem {
             id: watchItem
-            contentHeight: Theme.fontSizeMedium*2
+            // Not fontSizeMedium*2: that is twice the font *size*, and a label's line height is
+            // taller than its font size, so the two labels overflowed the highlight.
+            // itemSizeSmall is Silica's height for a two-line item.
+            contentHeight: Theme.itemSizeSmall
             ListView.onRemove: animateRemoval(watchItem)
 
             menu: ContextMenu {
@@ -45,19 +48,29 @@ Page {
                 }
             }
 
-            Row {
-                anchors.fill: parent
-                anchors.margins: Theme.horizontalPageMargins
+            Column {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    leftMargin: Theme.horizontalPageMargins
+                    rightMargin: Theme.horizontalPageMargins
+                    verticalCenter: parent.verticalCenter
+                }
 
-                Column {
-                    Label {
-                        text: model.name
-                    }
+                Label {
+                    width: parent.width
+                    text: model.name
+                    truncationMode: TruncationMode.Fade
+                    color: watchItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                }
 
-                    Label {
-                        text: model.connected ? qsTr("Connected") : qsTr("Disconnected")
-                        font.pixelSize: Theme.fontSizeSmall
-                    }
+                Label {
+                    width: parent.width
+                    text: model.connected ? qsTr("Connected") : qsTr("Disconnected")
+                    font.pixelSize: Theme.fontSizeSmall
+                    truncationMode: TruncationMode.Fade
+                    color: watchItem.highlighted ? Theme.secondaryHighlightColor
+                                                 : Theme.secondaryColor
                 }
             }
 

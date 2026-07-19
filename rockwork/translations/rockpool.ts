@@ -640,82 +640,87 @@
 <context>
     <name>MainMenuPage</name>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="19"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="22"/>
+        <source>Watch manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainMenuPage.qml" line="28"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="25"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="34"/>
         <source>Developer tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="120"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="129"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="120"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="129"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="128"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="137"/>
         <source>Update Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="150"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="159"/>
         <source>Upgrading...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="162"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="171"/>
         <source>Running</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="172"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="181"/>
         <source>Your Pebble smartwatch is disconnected. Please make sure it is powered on, within range and it is paired properly in the Bluetooth System Settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="182"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="191"/>
         <source>Open Bluetooth Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="189"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="198"/>
         <source>Your Pebble smartwatch is in factory mode and needs to be initialized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="198"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="207"/>
         <source>Initialize Pebble</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="267"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="276"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="272"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="281"/>
         <source>Watch Apps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="278"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="287"/>
         <source>Watchfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="284"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="293"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="291"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="300"/>
         <source>Firmware</source>
         <translation type="unfinished"></translation>
     </message>
@@ -820,22 +825,37 @@
     </message>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="22"/>
-        <location filename="../qml/pages/PebblesPage.qml" line="68"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="100"/>
         <source>Pair new watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="39"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="37"/>
+        <source>Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="44"/>
+        <source>Forget watch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="45"/>
+        <source>Forgetting watch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PebblesPage.qml" line="69"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="39"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="69"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="59"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="91"/>
         <source>No Pebble smartwatches configured yet. Put your watch in pairing mode and pair it from here.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -16,6 +16,15 @@ Page {
     SilicaFlickable {
         PullDownMenu {
             MenuItem {
+                // With a single watch, rockpool.qml pushes this page straight onto a cleared
+                // stack, so the watch list is otherwise unreachable — and with it, pairing and
+                // forgetting.
+                text: qsTr("Watch manager")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("PebblesPage.qml"))
+                }
+            }
+            MenuItem {
                 text: qsTr("About")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("InfoPage.qml"))
