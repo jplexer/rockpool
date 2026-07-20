@@ -681,46 +681,41 @@
     </message>
     <message>
         <location filename="../qml/pages/MainMenuPage.qml" line="181"/>
-        <source>Your Pebble smartwatch is disconnected. Please make sure it is powered on, within range and it is paired properly in the Bluetooth System Settings.</source>
+        <source>Your Pebble smartwatch is disconnected. Please make sure it is powered on and within range.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/MainMenuPage.qml" line="191"/>
-        <source>Open Bluetooth Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="198"/>
         <source>Your Pebble smartwatch is in factory mode and needs to be initialized.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="207"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="200"/>
         <source>Initialize Pebble</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="276"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="269"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="281"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="274"/>
         <source>Watch Apps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="287"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="280"/>
         <source>Watchfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="293"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="286"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainMenuPage.qml" line="300"/>
+        <location filename="../qml/pages/MainMenuPage.qml" line="293"/>
         <source>Firmware</source>
         <translation type="unfinished"></translation>
     </message>
@@ -866,67 +861,62 @@
     </message>
     <message>
         <location filename="../qml/pages/PebblesPage.qml" line="14"/>
-        <source>Bluetooth Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="18"/>
         <source>Restart service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="22"/>
-        <location filename="../qml/pages/PebblesPage.qml" line="116"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="18"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="112"/>
         <source>Pair new watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="37"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="33"/>
         <source>Connect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="44"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="40"/>
         <source>Disconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="51"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="47"/>
         <source>Forget watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="52"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="48"/>
         <source>Forgetting watch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="79"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="75"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="80"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="76"/>
         <source>Negotiating…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="81"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="77"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="82"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="78"/>
         <source>Connection failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="83"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="79"/>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PebblesPage.qml" line="107"/>
+        <location filename="../qml/pages/PebblesPage.qml" line="103"/>
         <source>No Pebble smartwatches configured yet. Put your watch in pairing mode and pair it from here.</source>
         <translation type="unfinished"></translation>
     </message>

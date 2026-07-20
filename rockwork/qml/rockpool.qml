@@ -26,18 +26,6 @@ ApplicationWindow {
         onConnectedToServiceChanged: loadStack();
     }
     DBusInterface {
-        id: lipstick
-        service: "org.nemomobile.lipstick"
-        path: "/LauncherModel"
-        iface: "org.nemomobile.lipstick.LauncherModel"
-    }
-    DBusInterface {
-        id: jolla
-        service: "com.jolla.settings"
-        path: "/com/jolla/settings/ui"
-        iface: "com.jolla.settings.ui"
-    }
-    DBusInterface {
         id: profiled
         service: "com.nokia.profiled"
         path: "/com/nokia/profiled"
@@ -50,12 +38,6 @@ ApplicationWindow {
                function(e){console.log("com.nokia.profiled error",e)})
         }
     }
-    function startBT() {
-        lipstick.typedCall("notifyLaunching",[{"type":"s","value":"jolla-settings.desktop"}],
-                           function(r){jolla.call("showPage",["system_settings/connectivity/bluetooth"])},
-                           function(e){console.log("Error",e)})
-    }
-
     function initService() {
         if (!pebbles.connectedToService && !serviceController.serviceRunning) {
             console.log("Service not running. Starting now.");

@@ -11,10 +11,6 @@ Page {
         }
         PullDownMenu {
             MenuItem {
-                text: qsTr("Bluetooth Settings")
-                onClicked: rockPool.startBT()
-            }
-            MenuItem {
                 text: qsTr("Restart service")
                 onClicked: rockPool.restartService()
             }
